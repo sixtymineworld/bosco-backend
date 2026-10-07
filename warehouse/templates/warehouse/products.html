@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load warehouse_extras %}
 
 {% block title %}Склад: Спортивне спорядження{% endblock %}
 
@@ -8,9 +9,9 @@
 {% for product in products %}
     {% if forloop.first %}
     <p>Усього товарів у базі: <strong>{{ products|length }}</strong></p>
-    <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 900px;">
+    <table class="products-table">
         <thead>
-            <tr style="background-color: #f4f4f4; text-align: left;">
+            <tr>
                 <th>ID</th>
                 <th>Назва</th>
                 <th>Категорія</th>
@@ -27,7 +28,7 @@
                 <td>{{ product.category }}</td>
                 <td>{{ product.material }}</td>
                 <td>{{ product.brand }}</td>
-                <td>{{ product.price }} грн</td>
+                <td>{{ product.price|uah }}</td>
             </tr>
     {% if forloop.last %}
         </tbody>
@@ -37,4 +38,3 @@
     <p>Товарів немає</p>
 {% endfor %}
 {% endblock %}
-
