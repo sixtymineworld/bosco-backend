@@ -1,0 +1,101 @@
+[
+  {
+    "model": "warehouse.product", 
+    "pk": 1, "fields": {
+        "name": "М’яч футбольний", 
+        "category": "Футбол", 
+        "material": "Синтетична шкіра", 
+        "brand": "Nike", 
+        "price": "1199.00"
+        }
+    },
+  {
+    "model": "warehouse.product", 
+    "pk": 2, "fields": {
+        "name": "Ракетка тенісна",
+         "category": "Теніс", 
+         "material": "Графіт", 
+         "brand": "Wilson", 
+         "price": "4500.00"
+         }
+        },
+  {
+    "model": "warehouse.product", 
+    "pk": 3, "fields": {
+        "name": "М’яч баскетбольний", 
+        "category": "Баскетбол", 
+        "material": "Гума / Композит", 
+        "brand": "Spalding", 
+        "price": "1450.50"
+        }
+    },
+  {
+    "model": "warehouse.product", 
+    "pk": 4, "fields": {
+        "name": "Рукавички боксерські", 
+        "category": "Бокс", 
+        "material": "Натуральна шкіра", 
+        "brand": "Everlast", 
+        "price": "2300.00"
+        }
+    },
+  {
+    "model": "warehouse.product", 
+    "pk": 5, "fields": {
+        "name": "Килимок для йоги",
+        "category": "Фітнес", 
+        "material": "TPE піна", 
+        "brand": "Reebok", 
+        "price": "890.00"
+        }
+    },
+  {
+    "model": "warehouse.product", 
+    "pk": 6, "fields": {
+        "name": "Шолом гірськолижний", 
+        "category": "Зимовий спорт",
+        "material": "Полікарбонат / EPS", 
+        "brand": "Salomon", 
+        "price": "3990.00"
+        }
+    },
+  {
+    "model": "warehouse.product", 
+    "pk": 7, "fields": {
+        "name": "Окуляри для плавання", 
+        "category": "Плавання", 
+        "material": "Силікон / Полікарбонат", 
+        "brand": "Speedo", 
+        "price": "750.00"
+        }
+    },
+  {
+    "model": "warehouse.product", 
+    "pk": 8, "fields": {
+        "name": "Гантель композитна 10кг",
+        "category": "Силові тренування", 
+        "material": "Чавун / Вініл", 
+        "brand": "Adidas", 
+        "price": "1200.00"
+        }
+    },
+  {
+    "model": "warehouse.product", 
+    "pk": 9, "fields": {
+        "name": "Палки трекінгові", 
+        "category": "Туризм", 
+        "material": "Алюміній", 
+        "brand": "Black Diamond", 
+        "price": "2850.00"
+        }
+    },
+  {
+    "model": "warehouse.product", 
+    "pk": 10, "fields": {
+        "name": "Скакалка швидкісна", 
+        "category": "Кросфіт", 
+        "material": "Сталевий трос / Пластик", 
+        "brand": "Puma", 
+        "price": "420.00"}
+    }
+]
