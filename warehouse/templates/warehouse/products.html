@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Склад: Спортивне спорядження{% endblock %}
+
+{% block content %}
+<h2>Склад спортивного спорядження</h2>
+
+{% for product in products %}
+    {% if forloop.first %}
+    <p>Усього товарів у базі: <strong>{{ products|length }}</strong></p>
+    <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 900px;">
+        <thead>
+            <tr style="background-color: #f4f4f4; text-align: left;">
+                <th>ID</th>
+                <th>Назва</th>
+                <th>Категорія</th>
+                <th>Матеріал</th>
+                <th>Бренд</th>
+                <th>Ціна</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% endif %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.category }}</td>
+                <td>{{ product.material }}</td>
+                <td>{{ product.brand }}</td>
+                <td>{{ product.price }} грн</td>
+            </tr>
+    {% if forloop.last %}
+        </tbody>
+    </table>
+    {% endif %}
+{% empty %}
+    <p>Товарів немає</p>
+{% endfor %}
+{% endblock %}
+
