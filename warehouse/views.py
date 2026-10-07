@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 import random
 from django.http import HttpResponse
 from .models import Product
@@ -47,6 +48,36 @@ BRANDS = [
 def products_view(request):
   products = Product.objects.all()
   return render(request, "warehouse/products.html", {"products": products})
+
+
+def add_product_view(request):
+  if request.method == "POST":
+    name = request.POST.get("name", "").strip()
+    category = request.POST.get("category", "").strip()
+    material = request.POST.get("material", "").strip()
+    brand = request.POST.get("brand", "").strip()
+    price_raw = request.POST.get("price", "").strip()
+
+    if not (name and category and material and brand and price_raw):
+      messages.error(request, "Будь ласка, заповніть усі поля.")
+      return render(request, "warehouse/product_form.html")
+
+    try:
+      price = float(price_raw)
+      Product.objects.create(
+          name=name,
+          category=category,
+          material=material,
+          brand=brand,
+          price=price,
+      )
+      messages.success(request, f"Товар «{name}» успішно додано!")
+      return redirect("products_list")
+    except ValueError:
+      messages.error(request, "Некоректний формат ціни.")
+      return render(request, "warehouse/product_form.html")
+
+  return render(request, "warehouse/product_form.html")
 
 
 
